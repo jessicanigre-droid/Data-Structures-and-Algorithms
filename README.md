@@ -84,3 +84,29 @@ If it overlaps with the previous one → merge them (take min start, max end).
 If not then add it as a new interval.
 
 Continue until all intervals are processed.
+
+
+
+DAY 6
+Algorithm
+Convert the string to a list (so removals are easy).
+
+First pass (left to right):
+
+  Maintain a counter balance of unmatched (seen so far.
+
+  If char is (: increment balance.
+
+  If char is ):
+
+   If balance == 0: mark this) for removal (it's invalid).
+
+   Else: decrement balance (it matches a previous ().
+
+Second pass (right to left):
+
+   balance now equals the number of extra ( to remove.
+
+   Traverse backward and remove ( until balance is zero.
+
+Join remaining characters and return.
