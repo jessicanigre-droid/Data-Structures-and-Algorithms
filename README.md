@@ -351,9 +351,3 @@ Build output string: For each character in the sorted list, repeat it according 
 Return the result string.
 
 End.
-
-eetr
-cccaaa
-bbAa
-
-Colab paid products - Cancel contracts here
