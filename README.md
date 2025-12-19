@@ -351,3 +351,32 @@ Build output string: For each character in the sorted list, repeat it according 
 Return the result string.
 
 End.
+
+
+
+
+
+DAY 8
+Count characters in s1.
+
+   Build a frequency map of all characters in s1.
+
+Use a sliding window of length len(s1) over s2.
+
+   For each window, count characters.
+
+   Compare with s1’s frequency map.
+
+Optimization:
+
+   Instead of recomputing counts for each window, update counts incrementally:
+
+   Add the new character entering the window.
+
+   Remove the old character leaving the window.
+
+Check equality:
+
+   If at any point the frequency maps match, return true.
+
+   If no match after scanning, return false.
