@@ -380,3 +380,122 @@ Check equality:
    If at any point the frequency maps match, return true.
 
    If no match after scanning, return false.
+
+
+
+DAY 9: Palindrome Partitioning
+Problem: Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s.
+Algorithm: Backtracking with recursion
+1. Use backtracking to explore all possible partitions of the string
+2. At each step, check if the current substring is a palindrome
+3. If yes, add it to the current path and recursively partition the remaining string
+4. When we reach the end of the string, add the current partition to results
+5. Backtrack by removing the last added substring
+Time Complexity: O(n * 2^n)
+Space Complexity: O(n)
+
+
+
+
+DAY 10: Minimum Window Substring
+Problem: Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+Algorithm: Sliding Window with Two Pointers
+1. Use two pointers (left and right) to create a window
+2. Expand window by moving right pointer, tracking character frequencies
+3. When all characters from t are included, contract window from left
+4. Track the minimum window that contains all characters
+5. Return the smallest valid window found
+
+Time Complexity:O(m + n)  
+Space Complexity:O(m + n)
+
+
+
+
+
+Day 13: Subsets (Power Set)
+ALGORITHM: Iterative Bitmask Construction
+1. Initialize result with empty subset: res = [[]]
+2. For each element x in nums:
+   a. Copy all existing subsets
+   b. Append x to each existing subset  
+   c. Add new subsets to result
+3. Each iteration doubles the subsets (2^n total)
+
+
+
+Day 14: Generate Parentheses
+ALGORITHM: Backtracking with Validity Constraints
+1. Track: current string, open_count, close_count
+2. Can add "(" if open_count < n
+3. Can add ")" if close_count < open_count  
+4. Stop when len(current) == 2*n
+5. Prune invalid partial solutions early
+
+
+
+Day 15: LRU Cache
+ALGORITHM: Doubly Linked List Simulation via OrderedDict
+GET(key):
+1. If key missing: return -1
+2. Move key to end (most recently used)
+3. Return value
+
+PUT(key, value):
+1. Move existing key to end OR insert new
+2. If size > capacity: remove first element (LRU)
+
+
+
+Day 16: First Missing Positive
+ALGORITHM: Cyclic Sort (Index = Value-1)
+1. For each index i:
+   - While nums[i] ∈ [1,n] AND nums[nums[i]-1] != nums[i]:
+     - Swap nums[i] with nums[nums[i]-1]
+2. First i where nums[i] != i+1 → answer = i+1
+3. If all correct: return n+1
+
+
+
+Day 17: Spiral Matrix
+ALGORITHM: Boundary Contraction
+Initialize: top=0, bottom=m-1, left=0, right=n-1
+While top≤bottom AND left≤right:
+1. Traverse top row = top++
+2. Traverse right column → right--
+3. Traverse bottom row (if valid) = bottom--
+4. Traverse left column (if valid) = left++
+
+
+
+Day 18: Valid Sudoku
+ALGORITHM: Three-Constraint Hashing
+Maintain 27 sets:
+- 9 row sets, 9 column sets, 9 3x3 box sets
+For each cell (r,c):
+1. box_idx = (r//3)*3 + (c//3)
+2. If digit in ANY of 3 sets → INVALID
+3. Add to all 3 sets
+
+
+
+Day 19: Word Search
+ALGORITHM: DFS Backtracking from Each Cell
+For each cell (i,j):
+1. If board[i][j] == word[0]:
+   - Mark visited, DFS 4 directions with k=1
+   - Unmark after exploration
+2. Directions: up, down, left, right
+3. Base: k == len(word) → True
+
+
+
+
+Day 20: Flatten Binary Tree
+ALGORITHM: Reverse Preorder Traversal (Right-Left-Root)
+Use prev pointer:
+1. Recurse right subtree
+2. Recurse left subtree  
+3. node.right = prev, node.left = None
+4. prev = node
+Maintains preorder: root to left to right
