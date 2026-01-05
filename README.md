@@ -499,3 +499,34 @@ Use prev pointer:
 3. node.right = prev, node.left = None
 4. prev = node
 Maintains preorder: root to left to right
+
+
+DAY 21: Palindrome Linked List
+
+**Problem:** Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+
+**Algorithm:** Fast/Slow Pointer + Reverse Second Half
+1. Use fast and slow pointers to find the middle of the list
+2. Reverse the second half of the list
+3. Compare first half with reversed second half node by node
+4. If all values match, it's a palindrome
+5. Return true if matched, false otherwise
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+
+
+DAY 22: Reverse Nodes in k-Group
+
+**Problem:** Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+
+**Algorithm:** Group Reversal with Pointer Manipulation
+1. Identify groups of k nodes using a counter
+2. Reverse each complete group by manipulating pointers
+3. Connect reversed groups together maintaining list continuity
+4. If remaining nodes < k, leave them unchanged
+5. Return the new head
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
