@@ -530,3 +530,50 @@ DAY 22: Reverse Nodes in k-Group
 
 **Time Complexity:** O(n)  
 **Space Complexity:** O(1)
+
+
+
+
+
+DAY 23: Merge Two Sorted Lists
+**Problem:** You are given the heads of two sorted linked lists list1 and list2. Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.
+**Algorithm:** Two-Pointer Merge
+1. Use a dummy node to start the merged list
+2. Compare values from both lists, attach smaller node
+3. Move pointer of the list from which node was taken
+4. Continue until one list is exhausted
+5. Attach remaining nodes from non-empty list
+6. Return dummy.next
+
+**Time Complexity:** O(m + n)  
+**Space Complexity:** O(1)
+
+
+
+DAY 24: Add Two Numbers (Linked List)
+**Problem:** You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+**Algorithm:** Digit-by-Digit Addition with Carry
+1. Traverse both lists simultaneously
+2. Add corresponding digits plus carry from previous addition
+3. Create new node with sum % 10
+4. Update carry as sum // 10
+5. Continue until both lists are exhausted and carry is 0
+6. Return the result list
+
+**Time Complexity:** O(max(m, n))  
+**Space Complexity:** O(max(m, n))
+
+
+
+DAY 25: Swap Adjacent Nodes
+**Problem:** Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed).
+**Algorithm:** Pairwise Pointer Swapping
+1. Use dummy node to handle edge cases
+2. For each pair, identify first and second nodes
+3. Adjust pointers: prev → second, first → second.next, second → first
+4. Move prev pointer to first (now in second position)
+5. Repeat until no more pairs exist
+6. Return dummy.next
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
