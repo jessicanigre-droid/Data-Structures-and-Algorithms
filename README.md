@@ -577,3 +577,96 @@ DAY 25: Swap Adjacent Nodes
 
 **Time Complexity:** O(n)  
 **Space Complexity:** O(1)
+
+
+
+
+
+
+DAY 26: Add Two Numbers (Same as Day 24)
+
+**Problem:** You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list. You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+**Algorithm:** Digit-by-Digit Addition with Carry
+1. Same algorithm as Day 24
+2. Process digits in reverse order (already stored in reverse)
+3. Handle carry propagation throughout
+4. Create result nodes as we sum
+
+**Time Complexity:** O(max(m, n))  
+**Space Complexity:** O(max(m, n))
+
+
+
+
+
+
+
+DAY 27: Swap Adjacent Nodes (Same as Day 25)
+
+**Problem:** Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed).
+
+**Algorithm:** Node Pointer Swapping (No Value Modification)
+1. Same as Day 25 but emphasizes not modifying node values
+2. Only manipulate the node pointers themselves
+3. Maintain list structure integrity throughout
+4. Use dummy node for cleaner edge case handling
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+
+
+
+
+
+DAY 28: Largest Rectangle in Histogram
+
+**Problem:** Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+
+**Algorithm:** Monotonic Stack
+1. Maintain a stack of indices with increasing heights
+2. When a smaller height is encountered, pop and calculate area
+3. Width is determined by current index and index after popped element
+4. Add sentinel (0) at end to clear remaining stack
+5. Track maximum area throughout
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n)
+
+
+
+
+
+
+DAY 29: Min Stack
+
+**Problem:** Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+**Algorithm:** Two Stacks (Main + Min Tracking)
+1. Use one stack for all values
+2. Use second stack to track minimum values
+3. Push to min stack only when value ≤ current minimum
+4. Pop from min stack only when popped value equals current min
+5. getMin() returns top of min stack
+
+**Time Complexity:** O(1) for all operations  
+**Space Complexity:** O(n)
+
+
+
+
+
+DAY 30: Implement Stack using Queues
+
+**Problem:** Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (push, top, pop, and empty).
+
+**Algorithm:** Two Queues with Element Rotation
+1. Use two queues (q1 and q2)
+2. On push: add element to q2, then move all from q1 to q2, swap queues
+3. This ensures newest element is always at front of q1
+4. Pop and top operations become O(1) on q1
+5. Empty check on q1
+
+**Time Complexity:** Push O(n), Pop/Top O(1)  
+**Space Complexity:** O(n)
