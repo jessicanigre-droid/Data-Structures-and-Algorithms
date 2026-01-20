@@ -768,3 +768,71 @@ DAY 35: Kth Smallest in BST
 
 **Time Complexity:** O(n)  
 **Space Complexity:** O(n)
+
+
+
+
+
+
+
+DAY 36: Level Order Traversal
+
+**Problem:** Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+
+**Algorithm:** BFS with Queue
+1. Use queue to process nodes level by level
+2. Track level size before processing each level
+3. Process all nodes at current level
+4. Add children to queue as you process nodes
+5. Collect nodes at each level into separate lists
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(w) where w is max width
+
+
+
+
+
+
+
+
+
+
+DAY 37: Sum Root to Leaf Numbers
+
+**Problem:** You are given the root of a binary tree containing digits from 0 to 9 only. Each root-to-leaf path in the tree represents a number. Return the total sum of all root-to-leaf numbers.
+
+**Algorithm:** DFS with Path Accumulation
+1. Recursively traverse tree, building number digit by digit
+2. At each node: current_number = previous * 10 + node.val
+3. At leaf nodes, return the accumulated number
+4. At internal nodes, return sum of left + right subtree results
+5. Accumulate all leaf values
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(h) for recursion stack
+
+
+
+
+
+
+
+
+
+
+
+
+DAY 38: Subtree of Another Tree
+
+**Problem:** Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise.
+
+**Algorithm:** Recursive Tree Matching
+1. Check if current node's tree matches subRoot (identical structure)
+2. Use helper function to verify if two trees are identical
+3. If not identical, recursively check left subtree
+4. Also recursively check right subtree
+5. Return true if any match is found
+
+**Time Complexity:** O(m * n) where m, n are tree sizes  
+**Space Complexity:** O(h) for recursion
