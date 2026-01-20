@@ -670,3 +670,101 @@ DAY 30: Implement Stack using Queues
 
 **Time Complexity:** Push O(n), Pop/Top O(1)  
 **Space Complexity:** O(n)
+
+
+
+
+
+
+
+
+
+
+
+DAY 31: BST Iterator
+
+**Problem:** Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST).
+
+**Algorithm:** Controlled In-order Traversal with Stack
+1. Initialize stack with all leftmost nodes from root
+2. next(): Pop from stack (smallest element), add right subtree's leftmost nodes
+3. This simulates in-order traversal on demand
+4. hasNext(): Check if stack is non-empty
+5. Space optimized - only store path to current node
+
+**Time Complexity:** O(1) average per operation  
+**Space Complexity:** O(h) where h is height
+
+
+
+
+
+
+
+
+
+
+DAY 32: Trapping Rain Water
+
+**Problem:** Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+**Algorithm:** Two Pointers from Both Ends
+1. Use left and right pointers at both ends
+2. Track left_max and right_max heights seen so far
+3. Move pointer with smaller max height inward
+4. Calculate trapped water as max_height - current_height
+5. Update max heights as we progress
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DAY 33: Maximum Depth of Binary Tree
+
+**Problem:** Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+**Algorithm:** Recursive DFS
+1. Base case: null node returns depth 0
+2. Recursive case: 1 + max(left subtree depth, right subtree depth)
+3. Each node adds 1 to the maximum of its children's depths
+4. Recursion naturally explores all paths
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(h) for recursion stack
+
+
+
+
+
+
+
+
+
+
+DAY 35: Kth Smallest in BST
+
+**Problem:** Given the root of a binary search tree, and an integer k, return the kth smallest value (1-indexed) of all the values of the nodes in the tree.
+
+**Algorithm:** In-order Traversal (Sorted Order)
+1. Perform in-order traversal (left, root, right)
+2. In-order traversal of BST gives sorted sequence
+3. Collect all values or count to k
+4. Return the kth element (k-1 index in 0-indexed array)
+5. Can optimize with early stopping at kth element
+
+**Time Complexity:** O(n)  
+**Space Complexity:** O(n)
